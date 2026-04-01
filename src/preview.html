@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🐘 The Buttered Elephant | Luxury Bakery</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500&family=Playfair+Display:ital,wght@0,400..700;1,400..700&family=Sacramento&family=Bodoni+Moda:ital,opsz,wght@1,6..96,400..900&display=swap");
+
+      :root {
+        --bg-color: #fce4ec;
+        --accent-pink: #f8bbd0;
+        --dark-pink: #880e4f;
+        --text-main: #2c3e50;
+        --text-muted: #546e7a;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: var(--bg-color);
+        overflow-x: hidden;
+      }
+
+      /* Splash Screen */
+      .splash-screen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: var(--bg-color);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 10000;
+        transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+      }
+
+      .splash-screen.hide {
+        transform: translateY(-100%);
+      }
+
+      .splash-logo {
+        font-family: "Sacramento", cursive;
+        font-size: 64px;
+        color: var(--dark-pink);
+        margin-bottom: 30px;
+        animation: floating 3s ease-in-out infinite;
+      }
+
+      @keyframes floating {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+
+        50% {
+          transform: translateY(-20px);
+        }
+      }
+
+      .confetti-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        pointer-events: none;
+        z-index: -1;
+      }
+
+      .confetti {
+        position: absolute;
+        top: -20px;
+        border-radius: 2px;
+        animation: confetti-fall linear infinite;
+      }
+
+      @keyframes confetti-fall {
+        0% {
+          transform: translateY(0) rotate(0deg);
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(100vh) rotate(720deg);
+          opacity: 0;
+        }
+      }
+
+      .enter-button {
+        padding: 15px 45px;
+        background-color: var(--dark-pink);
+        color: white;
+        border: none;
+        border-radius: 40px;
+        font-family: "Playfair Display", serif;
+        font-size: 20px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .bakery-container {
+        font-family: "Outfit", sans-serif;
+        min-height: 100vh;
+        color: var(--text-main);
+      }
+
+      .content-wrapper {
+        width: 100%;
+        margin: 0;
+        padding: 20px 4%;
+      }
+
+      .navbar {
+        display: flex;
+        align-items: center;
+        margin-bottom: 30px;
+        gap: 20px;
+      }
+
+      .logo {
+        font-family: "Sacramento", cursive;
+        font-size: 34px;
+        color: var(--text-main);
+        margin: 0;
+        flex: 1;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 30px;
+        font-size: 14px;
+        font-weight: 400;
+        text-transform: lowercase;
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        align-items: center;
+        padding: 40px 0;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .hero-title {
+        font-family: "Playfair Display", serif;
+        font-size: 64px;
+        line-height: 1.1;
+        letter-spacing: 4px;
+        margin: 0 0 20px 0;
+        background: linear-gradient(90deg, #f8bbd0, #ffcc80, #f06292);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        display: inline-block;
+        position: relative;
+      }
+
+      .hero-sub-logo {
+        font-family: "Sacramento", cursive;
+        font-size: 24px;
+        color: #cc8b8b;
+        -webkit-text-fill-color: #cc8b8b;
+        position: absolute;
+        top: 45px;
+        left: 250px;
+        letter-spacing: 0;
+        white-space: nowrap;
+        background-clip: initial;
+        -webkit-background-clip: initial;
+      }
+
+      .image-container {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        position: relative;
+      }
+
+      .hero-image {
+        width: 450px;
+        height: auto;
+        animation: dancing 3s ease-in-out infinite;
+        cursor: pointer;
+      }
+
+      .sound-toggle {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        background: rgba(255, 255, 255, 0.6);
+        border: none;
+        padding: 10px;
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 20px;
+        backdrop-filter: blur(5px);
+        z-index: 10;
+      }
+
+      @keyframes dancing {
+        0%,
+        100% {
+          transform: translateY(0) scale(1);
+        }
+
+        50% {
+          transform: translateY(-10px) scale(1.02);
+        }
+      }
+
+      .best-sellers-section {
+        background-color: var(--accent-pink);
+        padding: 80px 0;
+      }
+
+      .best-sellers-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .section-title {
+        font-family: "Bodoni Moda", serif;
+        text-align: center;
+        font-size: 48px;
+        font-style: italic;
+        margin-bottom: 60px;
+        color: #222;
+      }
+
+      .products-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 50px;
+        width: 100%;
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .product-item {
+        width: 100%;
+        max-width: 250px;
+        background: rgba(255, 255, 255, 0.4);
+        backdrop-filter: blur(10px);
+        padding: 15px;
+        border-radius: 28px;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        margin-bottom: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0 auto;
+      }
+
+      .product-item:hover {
+        transform: translateY(-15px) scale(1.05);
+        background: rgba(255, 255, 255, 0.8);
+        box-shadow: 0 30px 60px rgba(136, 14, 79, 0.15);
+      }
+
+      .product-image {
+        width: 100%;
+        height: 220px;
+        border-radius: 24px;
+        object-fit: cover;
+        margin-bottom: 20px;
+        transition: transform 0.5s ease;
+      }
+
+      .product-item:hover .product-image {
+        transform: scale(1.08);
+      }
+
+      .product-name {
+        font-family: "Playfair Display", serif;
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 10px;
+        text-align: center;
+      }
+
+      .product-price {
+        font-size: 16px;
+        font-weight: 500;
+        color: var(--dark-pink);
+        margin-bottom: 15px;
+      }
+
+      .order-button {
+        background-color: var(--dark-pink);
+        color: white;
+        border: none;
+        padding: 12px;
+        width: 100%;
+        border-radius: 14px;
+        cursor: pointer;
+        font-weight: 500;
+        transition: background 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        box-sizing: border-box;
+      }
+
+      .order-button:hover {
+        background-color: #ad1457;
+      }
+
+      .about-section,
+      .contact-section {
+        padding: 80px 0;
+        max-width: 1000px;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      .about-text {
+        font-family: "Playfair Display", serif;
+        font-size: 20px;
+        line-height: 1.8;
+        color: var(--text-main);
+        white-space: pre-line;
+        padding: 0 40px;
+      }
+
+      .contact-content {
+        background: rgba(255, 255, 255, 0.4);
+        backdrop-filter: blur(10px);
+        padding: 40px;
+        border-radius: 40px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        display: inline-block;
+        min-width: 300px;
+      }
+
+      .contact-item {
+        margin: 15px 0;
+        font-size: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+      }
+
+      .contact-item a {
+        color: var(--dark-pink);
+        text-decoration: none;
+        font-weight: 500;
+      }
+
+      .nav-links span {
+        cursor: pointer;
+        transition: color 0.3s ease;
+      }
+
+      .nav-links span:hover {
+        color: var(--dark-pink);
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="splashScreen" class="splash-screen">
+      <div class="confetti-container">
+        <div
+          class="confetti"
+          style="
+            left: 3%;
+            width: 6px;
+            height: 6px;
+            background: #f8bbd0;
+            animation-delay: 0.1s;
+            animation-duration: 2.2s;
+          "
+        ></div>
+        <div
+          class="confetti"
+          style="
+            left: 7%;
+            width: 4px;
+            height: 4px;
+            background: #ffcc80;
+            animation-delay: 0.4s;
+            animation-duration: 1.8s;
+          "
+        ></div>
+        <div
+          class="confetti"
+          style="
+            left: 11%;
+            width: 8px;
+            height: 8px;
+            background: #f06292;
+            animation-delay: 0.7s;
+            animation-duration: 2.5s;
+          "
+        ></div>
+        <div
+          class="confetti"
+          style="
+            left: 15%;
+            width: 5px;
+            height: 5px;
+            background: #880e4f;
+            animation-delay: 0.2s;
+            animation-duration: 1.6s;
+          "
+        ></div>
+        <div
+          class="confetti"
+          style="
+            left: 19%;
+            width: 7px;
+            height: 7px;
+            background: #ffffff;
+            animation-delay: 0.9s;
+            animation-duration: 2.1s;
+          "
+        ></div>
+        <div
+          class="confetti"
+          style="
+            left: 23%;
+            width: 6px;
+            height: 6px;
+            background: #f8bbd0;
+            animation-delay: 1.2s;
+            animation-duration: 2.4s;
+          "
+        ></div>
+        <div
+          class="confetti"
+          style="
+            left: 27%;
+            width: 5px;
+            height: 5px;
+            background: #ffcc80;
+            animation-delay: 0.3s;
+            animation-duration: 1.9s;
+          "
+        ></div>
+        <div
+          class="confetti"
+          style="
+            left: 31%;
+            width: 9px;
+            height: 9px;
+            background: #f06292;
+            animation-delay: 0.6s;
+            animation-duration: 2.3s;
+          "
+        ></div>
+        <div
+          class="confetti"
+          style="
+            left: 35%;
+            width: 4px;
+            height: 4px;
+            background: #880e4f;
+            animation-delay: 1.5s;
+            animation-duration: 1.7s;
+          "
+        ></div>
+        <div
+          class="confetti"
+          style="
+            left: 39%;
+            width: 8px;
+            height: 8px;
+            background: #ffffff;
+            animation-delay: 0.8s;
+            animation-duration: 2.6s;
+          "
+        ></div>
+        <div
+          class="confetti"
+          style="
+            left: 43%;
+            width: 6px;
+            height: 6px;
+            background: #f8bbd0;
+            animation-delay: 0s;
+            animation-duration: 2.1s;
+          "
+        ></div>
+        <div
+          class="confetti"
+          style="
+            left: 47%;
+            width: 5px;
+            height: 5px;
+            background: #ffcc80;
+            animation-delay: 0.5s;
+            animation-duration: 1.5s;
+          "
+        ></div>
+        <div
+          class="confetti"
+          style="
+            left: 51%;
+            width: 10px;
+            height: 10px;
+            background: #f06292;
+            animation-delay: 1.8s;
+            animation-duration: 2.8s;
+          "
+        ></div>
+        <div
+          class="confetti"
+          style="
+            left: 55%;
+            width: 4px;
+            height: 4px;
+            background: #880e4f;
+            animation-delay: 0.2s;
+            animation-duration: 1.4s;
+          "
+        ></div>
+        <div
+          class="confetti"
+          style="
+            left: 59%;
+            width: 7px;
+            height: 7px;
+            background: #ffffff;
+            animation-delay: 1.1s;
+            animation-duration: 2.2s;
+          "
+        ></div>
+        <div
+          class="confetti"
+          style="
+            left: 63%;
+            width: 6px;
+            height: 6px;
+            background: #f8bbd0;
+            animation-delay: 0.4s;
+            animation-duration: 1.9s;
+          "
+        ></div>
+        <div
+          class="confetti"
+          style="
+            left: 67%;
+            width: 5px;
+            height: 5px;
+            background: #ffcc80;
+            animation-delay: 1.4s;
+            animation-duration: 2.5s;
+          "
+        ></div>
+        <div
+          class="confetti"
+          style="
+            left: 71%;
+            width: 8px;
+            height: 8px;
+            background: #f06292;
+            animation-delay: 0.7s;
+            animation-duration: 2s;
+          "
+        ></div>
+        <div
+          class="confetti"
+          style="
+            left: 75%;
+            width: 6px;
+            height: 6px;
+            background: #880e4f;
+            animation-delay: 0.3s;
+            animation-duration: 1.7s;
+          "
+        ></div>
+        <div
+          class="confetti"
+          style="
+            left: 79%;
+            width: 9px;
+            height: 9px;
+            background: #ffffff;
+            animation-delay: 1.6s;
+            animation-duration: 2.3s;
+          "
+        ></div>
+        <div
+          class="confetti"
+          style="
+            left: 83%;
+            width: 5px;
+            height: 5px;
+            background: #f8bbd0;
+            animation-delay: 0.9s;
+            animation-duration: 1.8s;
+          "
+        ></div>
+        <div
+          class="confetti"
+          style="
+            left: 87%;
+            width: 7px;
+            height: 7px;
+            background: #ffcc80;
+            animation-delay: 0.1s;
+            animation-duration: 2.1s;
+          "
+        ></div>
+        <div
+          class="confetti"
+          style="
+            left: 91%;
+            width: 6px;
+            height: 6px;
+            background: #f06292;
+            animation-delay: 1.3s;
+            animation-duration: 2.4s;
+          "
+        ></div>
+        <div
+          class="confetti"
+          style="
+            left: 95%;
+            width: 4px;
+            height: 4px;
+            background: #880e4f;
+            animation-delay: 0.5s;
+            animation-duration: 1.6s;
+          "
+        ></div>
+        <div
+          class="confetti"
+          style="
+            left: 1%;
+            width: 8px;
+            height: 8px;
+            background: #ffffff;
+            animation-delay: 2s;
+            animation-duration: 2.7s;
+          "
+        ></div>
+        <!-- More for density -->
+        <div
+          class="confetti"
+          style="
+            left: 10%;
+            width: 5px;
+            height: 5px;
+            background: #f8bbd0;
+            animation-delay: 0.2s;
+            animation-duration: 1.5s;
+          "
+        ></div>
+        <div
+          class="confetti"
+          style="
+            left: 20%;
+            width: 6px;
+            height: 6px;
+            background: #ffcc80;
+            animation-delay: 0.8s;
+            animation-duration: 2.1s;
+          "
+        ></div>
+        <div
+          class="confetti"
+          style="
+            left: 30%;
+            width: 7px;
+            height: 7px;
+            background: #f06292;
+            animation-delay: 0.4s;
+            animation-duration: 1.9s;
+          "
+        ></div>
+        <div
+          class="confetti"
+          style="
+            left: 40%;
+            width: 4px;
+            height: 4px;
+            background: #880e4f;
+            animation-delay: 1.1s;
+            animation-duration: 2.3s;
+          "
+        ></div>
+        <div
+          class="confetti"
+          style="
+            left: 60%;
+            width: 8px;
+            height: 8px;
+            background: #ffffff;
+            animation-delay: 0.6s;
+            animation-duration: 2s;
+          "
+        ></div>
+        <div
+          class="confetti"
+          style="
+            left: 80%;
+            width: 6px;
+            height: 6px;
+            background: #f8bbd0;
+            animation-delay: 1s;
+            animation-duration: 2.4s;
+          "
+        ></div>
+      </div>
+      <h1 class="splash-logo">🐘 theButteredElephant</h1>
+      <button class="enter-button" onclick="enterSite()">
+        Enter Experience
+      </button>
+    </div>
+
+    <div class="bakery-container">
+      <div class="content-wrapper">
+        <nav class="navbar">
+          <h1 class="logo">🐘 theButteredElephant</h1>
+          <div class="nav-links">
+            <span
+              onclick="document.getElementById('gallery').scrollIntoView({behavior: 'smooth'})"
+              >gallery</span
+            >
+            <span
+              onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'})"
+              >about us</span
+            >
+            <span
+              onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})"
+              >contacts</span
+            >
+          </div>
+        </nav>
+        <main class="hero">
+          <div class="hero-content">
+            <h1 class="hero-title">
+              HOME<span class="hero-sub-logo">lavanya</span><br />BAKERY
+            </h1>
+            <p>
+              Every bake is a promise. Brought to life with love and passion.
+            </p>
+          </div>
+          <div class="image-container">
+            <video
+              id="heroVideo"
+              src="https://res.cloudinary.com/dhtjil4zt/video/upload/v1775065339/vv_td7vax.mp4"
+              autoplay
+              loop
+              muted
+              playsinline
+              class="hero-image"
+              onclick="toggleSound()"
+            ></video>
+            <button class="sound-toggle" onclick="toggleSound()" id="soundIcon">
+              🔇
+            </button>
+          </div>
+        </main>
+      </div>
+      <section id="gallery" class="best-sellers-section">
+        <h2 class="section-title">From the Elephant Kitchen</h2>
+        <div class="products-grid">
+          <div class="product-item">
+            <img
+              src="https://res.cloudinary.com/dhtjil4zt/image/upload/v1775055336/3_oc7kwn.jpg"
+              class="product-image"
+            />
+            <div class="product-name">Chocolate Cake</div>
+            <div class="product-price">₹1200</div>
+            <a
+              href="https://api.whatsapp.com/send?phone=919849500663"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="order-button"
+              onclick="openWhatsApp(event)"
+            >
+              Order Now
+            </a>
+          </div>
+          <!-- Adding 4 samples to show the 4-column grid -->
+          <div class="product-item">
+            <img
+              src="https://res.cloudinary.com/dhtjil4zt/image/upload/v1775055976/6_vek6t4.jpg"
+              class="product-image"
+            />
+            <div class="product-name">Sheet Cake</div>
+            <div class="product-price">₹800</div>
+            <a
+              href="https://api.whatsapp.com/send?phone=919849500663"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="order-button"
+              onclick="openWhatsApp(event)"
+            >
+              Order Now
+            </a>
+          </div>
+          <div class="product-item">
+            <img
+              src="https://res.cloudinary.com/dhtjil4zt/image/upload/v1775059128/3_sw8u2t.jpg"
+              class="product-image"
+            />
+            <div class="product-name">Brownie Slab</div>
+            <div class="product-price">₹450</div>
+            <a
+              href="https://api.whatsapp.com/send?phone=919849500663"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="order-button"
+              onclick="openWhatsApp(event)"
+            >
+              Order Now
+            </a>
+          </div>
+          <div class="product-item">
+            <img
+              src="https://res.cloudinary.com/dhtjil4zt/image/upload/v1775060140/1_bwrgmq.jpg"
+              class="product-image"
+            />
+            <div class="product-name">Cookie Tin</div>
+            <div class="product-price">₹600</div>
+            <a
+              href="https://api.whatsapp.com/send?phone=919849500663"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="order-button"
+              onclick="openWhatsApp(event)"
+            >
+              Order Now
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- About Us Section -->
+      <section id="about" class="about-section">
+        <h2 class="section-title">A Piece of My Dream</h2>
+        <div class="about-text">
+          The Buttered Elephant is more than just a bakery — it’s a dream that
+          grew with me. What started as a simple love for baking as a little
+          girl has now turned into something I pour my heart into every single
+          day. Every cake, every brownie, every little treat you see here
+          carries that same passion, patience, and joy. I believe baking is not
+          just about taste, but about creating moments — warm, comforting, and
+          memorable. That’s why everything at The Buttered Elephant is made with
+          intention, using the finest ingredients and a promise to deliver
+          nothing but the best quality. For me, this isn’t just baking. It’s
+          love, it’s dedication, and it’s a piece of my dream — shared with you.
+          — with love, Lavanya 🐘
+        </div>
+      </section>
+
+      <!-- Contact Us Section -->
+      <section id="contact" class="contact-section">
+        <h2 class="section-title">Let’s create something sweet together ✨</h2>
+        <div class="contact-content">
+          <p style="margin-bottom: 20px; font-size: 16px; color: #555">
+            Whether you’re celebrating something special or simply craving a
+            little indulgence, I’d love to be a part of it.
+          </p>
+          <div class="contact-item">
+            <span>📞</span> <a href="tel:+919849500663">+91 9849500663</a>
+          </div>
+          <div class="contact-item">
+            <span>📩</span>
+            <a href="mailto:thebutteredelephant@gmail.com"
+              >thebutteredelephant@gmail.com</a
+            >
+          </div>
+          <div class="contact-item"><span>📍</span> <span>Hyderabad</span></div>
+          <p style="margin-top: 25px; font-size: 14px; font-style: italic">
+            You can also DM on Instagram or message on WhatsApp for quick
+            responses.
+          </p>
+          <div style="margin-top: 20px">
+            <a
+              href="https://api.whatsapp.com/send?phone=919849500663"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="order-button"
+              onclick="openWhatsApp(event)"
+              style="
+                text-decoration: none;
+                display: inline-block;
+                width: auto;
+                padding: 12px 30px;
+              "
+            >
+              Message on WhatsApp
+            </a>
+          </div>
+        </div>
+        <p
+          style="
+            margin-top: 40px;
+            font-family: 'Sacramento', cursive;
+            font-size: 24px;
+          "
+        >
+          — with love, Lavanya 🧈🐘
+        </p>
+      </section>
+    </div>
+
+    <script>
+      function enterSite() {
+        document.getElementById("splashScreen").classList.add("hide");
+        const video = document.getElementById("heroVideo");
+        video.muted = false;
+        document.getElementById("soundIcon").textContent = "🔊";
+      }
+      function toggleSound() {
+        const video = document.getElementById("heroVideo");
+        const icon = document.getElementById("soundIcon");
+        video.muted = !video.muted;
+        icon.textContent = video.muted ? "🔇" : "🔊";
+      }
+      function openWhatsApp(e) {
+        if (e) e.preventDefault();
+        var phone = "919849500663";
+        var protocolUrl = "whatsapp://send?phone=" + phone;
+        var webUrl = "https://api.whatsapp.com/send?phone=" + phone;
+
+        // Try protocol first
+        window.location.href = protocolUrl;
+
+        // Fallback to web URL in a new tab
+        setTimeout(function () {
+          window.open(webUrl, "_blank", "noopener,noreferrer");
+        }, 500);
+      }
+    </script>
+  </body>
+</html>
