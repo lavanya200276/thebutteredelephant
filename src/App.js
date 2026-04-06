@@ -35,7 +35,7 @@ export default function BakeryWebsite() {
     { name: "Classic Vanilla (1/2kg)", price: "₹550", url: "https://res.cloudinary.com/dhtjil4zt/image/upload/v1775056200/Screenshot_2026-04-01_at_8.39.03_PM_uws1vv.png" },
     { name: "Classic Blueberry (1/2kg)", price: "₹650", url: "https://res.cloudinary.com/dhtjil4zt/image/upload/v1775056926/5_i5go4j.png" },
     { name: "Chocolate Cupcakes (pack of 6 with frosting)", price: "₹450", url: "https://res.cloudinary.com/dhtjil4zt/image/upload/v1775059129/7_limeqf.jpg" },
-    { name: "Tiramisu mini Box (can customise the quantity)", price: "₹110", url: "https://res.cloudinary.com/dhtjil4zt/image/upload/v1775060150/3_etesmh.jpg" },
+    { name: "Tiramisu mini Box (can customise the quantity)", price: "₹160", url: "https://res.cloudinary.com/dhtjil4zt/image/upload/v1775060150/3_etesmh.jpg" },
     { name: "Nutella Brownies (1/2kg)", price: "₹550", url: "https://res.cloudinary.com/dhtjil4zt/image/upload/v1775059128/2_v2lxv9.jpg" },
     { name: "Brownie Slab (750gms)", price: "₹650", url: "https://res.cloudinary.com/dhtjil4zt/image/upload/v1775059128/4_h2isuf.jpg" },
     { name: "Red Velvet Cake (1/2kg)", price: "₹630", url: "https://res.cloudinary.com/dhtjil4zt/image/upload/v1775056833/copy_of_8_r9e1wh_fe1e87.png" },
