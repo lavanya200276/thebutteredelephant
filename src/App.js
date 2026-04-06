@@ -22,10 +22,10 @@ export default function BakeryWebsite() {
   const products = [
     { name: "Chocolate Cake 1kg", price: "₹900", url: "https://res.cloudinary.com/dhtjil4zt/image/upload/v1775055336/3_oc7kwn.jpg" },
     { name: "Sheet Cake 1/2kg (Milk & Choco)", price: "₹450", url: "https://res.cloudinary.com/dhtjil4zt/image/upload/v1775055976/6_vek6t4.jpg" },
-    { name: "Brownie Slab (1/2kg)", price: "₹550", url: "https://res.cloudinary.com/dhtjil4zt/image/upload/v1775059128/3_sw8u2t.jpg" },
+    { name: "Brownie Slab (1/2kg)", price: "₹450", url: "https://res.cloudinary.com/dhtjil4zt/image/upload/v1775059128/3_sw8u2t.jpg" },
     { name: "Choco Chip Cookie Tin", price: "₹380", url: "https://res.cloudinary.com/dhtjil4zt/image/upload/v1775060140/1_bwrgmq.jpg" },
     { name: "Vanilla Sheet Cake 1/2kg", price: "₹450", url: "https://res.cloudinary.com/dhtjil4zt/image/upload/q_auto/f_auto/v1775055274/1_ae2mhj.jpg" },
-    { name: "Brownie Slab (1kg)", price: "₹900", url: "https://res.cloudinary.com/dhtjil4zt/image/upload/v1775059128/6_ve3mpj.jpg" },
+    { name: "Brownie Slab (1kg)", price: "₹800", url: "https://res.cloudinary.com/dhtjil4zt/image/upload/v1775059128/6_ve3mpj.jpg" },
     { name: "Pinteresty Vanilla Milk Choco (600gms)", price: "₹650", url: "https://res.cloudinary.com/dhtjil4zt/image/upload/v1775059127/1_uvgdjt.jpg" },
     { name: "Vanilla Cupcakes (Pack of 6)", price: "₹300", url: "https://res.cloudinary.com/dhtjil4zt/image/upload/v1775059129/8_i0bfr6.jpg" },
     { name: "Blondies (1/2kg slab)", price: "₹600", url: "https://res.cloudinary.com/dhtjil4zt/image/upload/v1775056296/Screenshot_2026-04-01_at_8.41.10_PM_lcgtog.png" },
