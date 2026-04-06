@@ -420,7 +420,7 @@ export default function BakeryWebsite() {
             />
           ))}
         </div>
-        <h1 className="splash-logo"> theButteredElephant 🐘</h1>
+        <h1 className="splash-logo"> TheButteredElephant 🐘</h1>
         <button className="enter-button" onClick={enterSite}>
           Step Into My Little Dream
         </button>
@@ -428,11 +428,11 @@ export default function BakeryWebsite() {
       <div className="bakery-container">
         <div className="content-wrapper">
           <nav className="navbar">
-            <h1 className="logo" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}> theButteredElephant 🐘</h1>
+            <h1 className="logo" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}> TheButteredElephant 🐘</h1>
             <div className="nav-links">
-              <span onClick={() => document.getElementById("gallery").scrollIntoView({ behavior: "smooth" })}>gallery</span>
-              <span onClick={() => document.getElementById("about").scrollIntoView({ behavior: "smooth" })}>about us</span>
-              <span onClick={() => document.getElementById("contact").scrollIntoView({ behavior: "smooth" })}>contacts</span>
+              <span onClick={() => document.getElementById("gallery").scrollIntoView({ behavior: "smooth" })}>Gallery</span>
+              <span onClick={() => document.getElementById("about").scrollIntoView({ behavior: "smooth" })}>About us</span>
+              <span onClick={() => document.getElementById("contact").scrollIntoView({ behavior: "smooth" })}>Contacts</span>
             </div>
             <a href="tel:+919849500663" className="phone-icon">📞</a>
           </nav>
