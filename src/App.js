@@ -3,18 +3,16 @@ export default function BakeryWebsite() {
   const [showSplash, setShowSplash] = React.useState(true);
   const [isMuted, setIsMuted] = React.useState(true);
   const openWhatsApp = (e, productName = "") => {
-    if (e) e.preventDefault();
-    const phone = "919849500663";
-    const text = productName 
-      ? `Hi Lavanya, I want to order ${productName} from The Buttered Elephant 🧈🐘`
-      : "Hi Lavanya, I want to order from The Buttered Elephant 🧈🐘";
-    const protocolUrl = `whatsapp://send?phone=${phone}&text=${encodeURIComponent(text)}`;
-    const webUrl = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
-    window.location.href = protocolUrl;
-    setTimeout(() => {
-      window.open(webUrl, "_blank", "noopener,noreferrer");
-    }, 500);
-  };
+  if (e) e.preventDefault();
+
+  const phone = "919849500663";
+  const message = productName
+    ? `Hi Lavanya, I want to order ${productName} from The Buttered Elephant 🧈🐘`
+    : "Hi Lavanya, I want to order from The Buttered Elephant 🧈🐘";
+
+  const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+  window.open(url, "_blank", "noopener,noreferrer");
+};
   const enterSite = () => {
     setShowSplash(false);
     setIsMuted(false);
@@ -477,6 +475,27 @@ const productCategories = [
           color: var(--text-main);
           text-align: center;
         }
+        
+.product-category {
+  margin-bottom: 55px;
+}
+
+.category-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(24px, 4vw, 32px);
+  font-weight: 600;
+  color: var(--dark-pink);
+  margin: 0 0 28px;
+}
+
+.product-category .products-grid {
+  align-items: stretch;
+}
+
+.product-item {
+  height: 100%;
+}
+
         .product-price {
           font-size: 16px;
           font-weight: 500;
@@ -609,23 +628,44 @@ const productCategories = [
             </div>
           </main>
         </div>
-        <section id="gallery" className="best-sellers-section">
-          <div className="best-sellers-content">
-            <h2 className="section-title">From the Elephant Kitchen</h2>
-            <div className="products-grid">
-              {products.map((product, index) => (
-                <div className="product-item" key={index}>
-                  <img src={product.url} alt={product.name} className="product-image" />
-                  <div className="product-name">{product.name}</div>
-                  <div className="product-price">{product.price}</div>
-                  <button onClick={(e) => openWhatsApp(e, product.name)} className="order-button">
-                    Order Now
-                  </button>
-                </div>
-              ))}
+        
+<section id="gallery" className="best-sellers-section">
+  <div className="best-sellers-content">
+    <h2 className="section-title">From the Elephant Kitchen</h2>
+
+    {productCategories.map((category) => (
+      <div className="product-category" key={category.category}>
+        <h3 className="category-title">{category.category}</h3>
+
+        <div className="products-grid">
+          {category.products.map((product) => (
+            <div className="product-item" key={product.name + product.url}>
+              <img
+                src={product.url}
+                alt={product.name}
+                className="product-image"
+                loading="lazy"
+                onError={(e) => {
+                  e.currentTarget.style.display = "none";
+                }}
+              />
+
+              <div className="product-name">{product.name}</div>
+
+              <button
+                onClick={() => openWhatsApp(null, product.name)}
+                className="order-button"
+              >
+                Order Now
+              </button>
             </div>
-          </div>
-        </section>
+          ))}
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
+
         <section id="about" className="about-section">
           <h2 className="section-title">A Piece of My Dream</h2>
           <div className="about-text">
