@@ -19,32 +19,141 @@ export default function BakeryWebsite() {
     setShowSplash(false);
     setIsMuted(false);
   };
-  const products = [
-    { name: "Chocolate Cake 1kg", price: "₹900", url: "https://res.cloudinary.com/dhtjil4zt/image/upload/v1775055336/3_oc7kwn.jpg" },
-    { name: "Sheet Cake 1/2kg (Milk & Choco)", price: "₹450", url: "https://res.cloudinary.com/dhtjil4zt/image/upload/v1775055976/6_vek6t4.jpg" },
-    { name: "Brownie Slab (1/2kg)", price: "₹450", url: "https://res.cloudinary.com/dhtjil4zt/image/upload/v1775059128/3_sw8u2t.jpg" },
-    { name: "Choco Chip Cookie Tin", price: "₹380", url: "https://res.cloudinary.com/dhtjil4zt/image/upload/v1775060140/1_bwrgmq.jpg" },
-    { name: "Vanilla Sheet Cake 1/2kg", price: "₹450", url: "https://res.cloudinary.com/dhtjil4zt/image/upload/q_auto/f_auto/v1775055274/1_ae2mhj.jpg" },
-    { name: "Brownie Slab (1kg)", price: "₹800", url: "https://res.cloudinary.com/dhtjil4zt/image/upload/v1775059128/6_ve3mpj.jpg" },
-    { name: "Pinteresty Vanilla Milk Choco (600gms)", price: "₹650", url: "https://res.cloudinary.com/dhtjil4zt/image/upload/v1775059127/1_uvgdjt.jpg" },
-    { name: "Vanilla Cupcakes (Pack of 6)", price: "₹300", url: "https://res.cloudinary.com/dhtjil4zt/image/upload/v1775059129/8_i0bfr6.jpg" },
-    { name: "Blondies (1/2kg slab)", price: "₹600", url: "https://res.cloudinary.com/dhtjil4zt/image/upload/v1775056296/Screenshot_2026-04-01_at_8.41.10_PM_lcgtog.png" },
-    { name: "Cupcakes Mix (chocolate & vanilla with frosting 6pcs)", price: "₹450", url: "https://res.cloudinary.com/dhtjil4zt/image/upload/v1775059128/5_tnmizb.jpg" },
-    { name: "Blueberry Cake (1kg)", price: "₹1000", url: "https://res.cloudinary.com/dhtjil4zt/image/upload/q_auto/f_auto/v1775055330/2_xuxrpf.jpg" },
-    { name: "Pistachio Kunafa Chocolate", price: "₹120", url: "https://res.cloudinary.com/dhtjil4zt/image/upload/v1775059129/9_vqv5qd.jpg" },
-    { name: "Classic Vanilla (1/2kg)", price: "₹550", url: "https://res.cloudinary.com/dhtjil4zt/image/upload/v1775056200/Screenshot_2026-04-01_at_8.39.03_PM_uws1vv.png" },
-    { name: "Classic Blueberry (1/2kg)", price: "₹650", url: "https://res.cloudinary.com/dhtjil4zt/image/upload/v1775056926/5_i5go4j.png" },
-    { name: "Chocolate Cupcakes (pack of 6 with frosting)", price: "₹450", url: "https://res.cloudinary.com/dhtjil4zt/image/upload/v1775059129/7_limeqf.jpg" },
-    { name: "Tiramisu mini Box (can customise the quantity)", price: "₹160", url: "https://res.cloudinary.com/dhtjil4zt/image/upload/v1775060150/3_etesmh.jpg" },
-    { name: "Nutella Brownies (1/2kg)", price: "₹550", url: "https://res.cloudinary.com/dhtjil4zt/image/upload/v1775059128/2_v2lxv9.jpg" },
-    { name: "Brownie Slab (750gms)", price: "₹650", url: "https://res.cloudinary.com/dhtjil4zt/image/upload/v1775059128/4_h2isuf.jpg" },
-    { name: "Red Velvet Cake (1/2kg)", price: "₹630", url: "https://res.cloudinary.com/dhtjil4zt/image/upload/v1775056833/copy_of_8_r9e1wh_fe1e87.png" },
-    { name: "San Sebastian Cheesecake with chocolate sauce (1 slice)", price: "₹380", url: "https://res.cloudinary.com/dhtjil4zt/image/upload/v1775060154/4_ugdy2a.jpg" },
-    { name: "Vanilla Sponge Cake (1/2kg)", price: "₹550", url: "https://res.cloudinary.com/dhtjil4zt/image/upload/v1775059021/Gemini_Generated_Image_og0vxbog0vxbog0v_gplyd0.png" },
-    { name: "Duo Brownies (1100gms)", price: "₹850", url: "https://res.cloudinary.com/dhtjil4zt/image/upload/v1775056440/9_fewo58.png" },
-    { name: "Tim Tams (pack of 20)", price: "₹240", url: "https://res.cloudinary.com/dhtjil4zt/image/upload/v1775060145/2_jwi4vs.jpg" },
-    { name: "Blueberry Delight (1/2kg)", price: "₹550", url: "https://res.cloudinary.com/dhtjil4zt/image/upload/v1775056190/Screenshot_2026-04-01_at_8.39.27_PM_vsyghj.png" },
-  ];
+  
+const products = [
+  {
+    name: "Milk & Chocolate Sheet Cake",
+    url: "https://res.cloudinary.com/dhtjil4zt/image/upload/v1775055976/6_vek6t4.jpg",
+  },
+  {
+    name: "Chocolate Chip Cookie",
+    url: "https://cdn.jsdelivr.net/gh/lavanya200276/buttered-elephant-images@main/1.jpeg",
+  },
+  {
+    name: "Classic Chocolate Brownie Slab",
+    url: "https://res.cloudinary.com/dhtjil4zt/image/upload/v1775059128/3_sw8u2t.jpg",
+  },
+  {
+    name: "Chocolate Chip Cookie Tin",
+    url: "https://res.cloudinary.com/dhtjil4zt/image/upload/v1775060140/1_bwrgmq.jpg",
+  },
+  {
+    name: "Fresh Pineapple Cake",
+    url: "https://cdn.jsdelivr.net/gh/lavanya200276/buttered-elephant-images@main/7.jpeg",
+  },
+  {
+    name: "Mini Brownie Box",
+    url: "https://cdn.jsdelivr.net/gh/lavanya200276/buttered-elephant-images@main/9.jpeg",
+  },
+  {
+    name: "Bestseller Blueberry Cake",
+    url: "https://cdn.jsdelivr.net/gh/lavanya200276/buttered-elephant-images@main/11.jpeg",
+  },
+  {
+    name: "Butterscotch Delight Cake",
+    url: "https://cdn.jsdelivr.net/gh/lavanya200276/buttered-elephant-images@main/12.jpeg",
+  },
+  {
+    name: "Red Velvet Cake",
+    url: "https://cdn.jsdelivr.net/gh/lavanya200276/buttered-elephant-images@main/15.jpeg",
+  },
+  {
+    name: "Custom Doraemon Cake",
+    url: "https://cdn.jsdelivr.net/gh/lavanya200276/buttered-elephant-images@main/16.jpeg",
+  },
+  {
+    name: "Bento Celebration Cake",
+    url: "https://cdn.jsdelivr.net/gh/lavanya200276/buttered-elephant-images@main/18.jpeg",
+  },
+  {
+    name: "Customised Brownie Birthday Slab",
+    url: "https://cdn.jsdelivr.net/gh/lavanya200276/buttered-elephant-images@main/19.jpeg",
+  },
+  {
+    name: "Customised Cheesecake",
+    url: "https://cdn.jsdelivr.net/gh/lavanya200276/buttered-elephant-images@main/20.jpeg",
+  },
+  {
+    name: "Tiered Milk Chocolate Sheet Cake",
+    url: "https://cdn.jsdelivr.net/gh/lavanya200276/buttered-elephant-images@main/6.jpeg",
+  },
+  {
+    name: "Chocolate Piñata Cake",
+    url: "https://cdn.jsdelivr.net/gh/lavanya200276/buttered-elephant-images@main/3.jpeg",
+  },
+  {
+    name: "Black Forest Cake",
+    url: "https://cdn.jsdelivr.net/gh/lavanya200276/buttered-elephant-images@main/4.jpeg",
+  },
+  {
+    name: "Classic Vanilla Sheet Cake",
+    url: "https://res.cloudinary.com/dhtjil4zt/image/upload/q_auto/f_auto/v1775055274/1_ae2mhj.jpg",
+  },
+  {
+    name: "Blueberry Celebration Cake",
+    url: "https://cdn.jsdelivr.net/gh/lavanya200276/buttered-elephant-images@main/5.jpeg",
+  },
+  {
+    name: "Classic Chocolate Brownie Slab",
+    url: "https://res.cloudinary.com/dhtjil4zt/image/upload/v1775059128/6_ve3mpj.jpg",
+  },
+  {
+    name: "Rich Chocolate Cake",
+    url: "https://res.cloudinary.com/dhtjil4zt/image/upload/v1775055336/3_oc7kwn.jpg",
+  },
+  {
+    name: "Vanilla Cupcakes",
+    url: "https://cdn.jsdelivr.net/gh/lavanya200276/buttered-elephant-images@main/2.jpeg",
+  },
+  {
+    name: "Fudgy Chocolate Blondies",
+    url: "https://res.cloudinary.com/dhtjil4zt/image/upload/v1775056296/Screenshot_2026-04-01_at_8.41.10_PM_lcgtog.png",
+  },
+  {
+    name: "Chocolate & Vanilla Frosted Cupcakes",
+    url: "https://cdn.jsdelivr.net/gh/lavanya200276/buttered-elephant-images@main/17.jpeg",
+  },
+  {
+    name: "Blueberry Cake",
+    url: "https://res.cloudinary.com/dhtjil4zt/image/upload/q_auto/f_auto/v1775055330/2_xuxrpf.jpg",
+  },
+  {
+    name: "Classic Vanilla Cake",
+    url: "https://res.cloudinary.com/dhtjil4zt/image/upload/v1775056200/Screenshot_2026-04-01_at_8.39.03_PM_uws1vv.png",
+  },
+  {
+    name: "Classic Blueberry Cake",
+    url: "https://res.cloudinary.com/dhtjil4zt/image/upload/v1775056926/5_i5go4j.png",
+  },
+  {
+    name: "Nutella-Filled Brownies",
+    url: "https://res.cloudinary.com/dhtjil4zt/image/upload/v1775059128/2_v2lxv9.jpg",
+  },
+  {
+    name: "Classic Chocolate Brownie Slab",
+    url: "https://res.cloudinary.com/dhtjil4zt/image/upload/v1775059128/4_h2isuf.jpg",
+  },
+  {
+    name: "Red Velvet Celebration Cake",
+    url: "https://res.cloudinary.com/dhtjil4zt/image/upload/v1775056833/copy_of_8_r9e1wh_fe1e87.png",
+  },
+  {
+    name: "San Sebastian Cheesecake",
+    url: "https://res.cloudinary.com/dhtjil4zt/image/upload/v1775060154/4_ugdy2a.jpg",
+  },
+  {
+    name: "Classic Vanilla Sponge Cake",
+    url: "https://res.cloudinary.com/dhtjil4zt/image/upload/v1775059021/Gemini_Generated_Image_og0vxbog0vxbog0v_gplyd0.png",
+  },
+  {
+    name: "Duo Chocolate Brownies",
+    url: "https://res.cloudinary.com/dhtjil4zt/image/upload/v1775056440/9_fewo58.png",
+  },
+  {
+    name: "Blueberry Delight Cake",
+    url: "https://res.cloudinary.com/dhtjil4zt/image/upload/v1775056190/Screenshot_2026-04-01_at_8.39.27_PM_vsyghj.png",
+  },
+];
   return (
     <>
       <style>{`
