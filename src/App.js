@@ -19,6 +19,7 @@ export default function BakeryWebsite() {
   };
   
 
+
 const productCategories = [
   {
     category: "Celebration Cakes",
@@ -59,7 +60,7 @@ const productCategories = [
         name: "Black Forest Cake",
         url: "https://cdn.jsdelivr.net/gh/lavanya200276/buttered-elephant-images@main/4.jpeg",
       },
-       {
+      {
         name: "Milk & Chocolate Sheet Cake",
         url: "https://res.cloudinary.com/dhtjil4zt/image/upload/v1775055976/6_vek6t4.jpg",
       },
@@ -77,15 +78,11 @@ const productCategories = [
       },
       {
         name: "Matilda Chocolate Fudge Cake",
-        url: "ADD_YOUR_OWN_MATILDA_CAKE_IMAGE_URL",
-        imageSearch:
-          "https://www.google.com/search?tbm=isch&q=Matilda+chocolate+fudge+cake",
+        url: "https://pastrybysaloni.com/wp-content/uploads/2025/08/MG_4914-2.webp",
       },
       {
         name: "London-Style Viral Chocolate Cake",
-        url: "ADD_YOUR_OWN_VIRAL_CHOCOLATE_CAKE_IMAGE_URL",
-        imageSearch:
-          "https://www.google.com/search?tbm=isch&q=London+viral+chocolate+cake",
+        url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRID29wV3dFH8B6k9xEWMJqtCG3bGAmGemKVnUgdH3H29luNH0Qh1_Kbd0&s=10",
       },
     ],
   },
@@ -163,25 +160,20 @@ const productCategories = [
     products: [
       {
         name: "Banana Chocolate Loaf",
-        url: "ADD_YOUR_OWN_BANANA_CHOCOLATE_LOAF_IMAGE_URL",
-        imageSearch:
-          "https://www.google.com/search?tbm=isch&q=banana+chocolate+loaf+cake",
+        url: "https://melaniemakes.com/images/2014/10/chocolate-chip-walnut-banana-bread-2.jpg",
       },
       {
         name: "Carrot Cake Loaf",
-        url: "ADD_YOUR_OWN_CARROT_LOAF_IMAGE_URL",
-        imageSearch:
-          "https://www.google.com/search?tbm=isch&q=carrot+cake+loaf",
+        url: "https://pastrybysaloni.com/wp-content/uploads/2024/10/Carrot-Cake-Loaf-Thumbnail-5.png",
       },
       {
         name: "Lemon Blueberry Loaf",
-        url: "ADD_YOUR_OWN_LEMON_BLUEBERRY_LOAF_IMAGE_URL",
-        imageSearch:
-          "https://www.google.com/search?tbm=isch&q=lemon+blueberry+loaf+cake",
+        url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqVrMkllz4iIN8bfgaGDR6kDz0lPGsAe83UnqVB5LAXZWMVZ8Caj5YtxbL&s=10",
       },
     ],
   },
 ];
+
 
   return (
     <>
