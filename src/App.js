@@ -20,140 +20,171 @@ export default function BakeryWebsite() {
     setIsMuted(false);
   };
   
-const products = [
+
+const productCategories = [
   {
-    name: "Milk & Chocolate Sheet Cake",
-    url: "https://res.cloudinary.com/dhtjil4zt/image/upload/v1775055976/6_vek6t4.jpg",
+    category: "Celebration Cakes",
+    products: [
+      {
+        name: "Custom Doraemon Cake",
+        url: "https://cdn.jsdelivr.net/gh/lavanya200276/buttered-elephant-images@main/16.jpeg",
+      },
+      {
+        name: "Bento Celebration Cake",
+        url: "https://cdn.jsdelivr.net/gh/lavanya200276/buttered-elephant-images@main/18.jpeg",
+      },
+      {
+        name: "Tiered Milk Chocolate Sheet Cake",
+        url: "https://cdn.jsdelivr.net/gh/lavanya200276/buttered-elephant-images@main/6.jpeg",
+      },
+      {
+        name: "Fresh Pineapple Cake",
+        url: "https://cdn.jsdelivr.net/gh/lavanya200276/buttered-elephant-images@main/7.jpeg",
+      },
+      {
+        name: "Blueberry Celebration Cake",
+        url: "https://cdn.jsdelivr.net/gh/lavanya200276/buttered-elephant-images@main/11.jpeg",
+      },
+      {
+        name: "Butterscotch Delight Cake",
+        url: "https://cdn.jsdelivr.net/gh/lavanya200276/buttered-elephant-images@main/12.jpeg",
+      },
+      {
+        name: "Red Velvet Celebration Cake",
+        url: "https://cdn.jsdelivr.net/gh/lavanya200276/buttered-elephant-images@main/15.jpeg",
+      },
+      {
+        name: "Chocolate Piñata Cake",
+        url: "https://cdn.jsdelivr.net/gh/lavanya200276/buttered-elephant-images@main/3.jpeg",
+      },
+      {
+        name: "Black Forest Cake",
+        url: "https://cdn.jsdelivr.net/gh/lavanya200276/buttered-elephant-images@main/4.jpeg",
+      },
+       {
+        name: "Milk & Chocolate Sheet Cake",
+        url: "https://res.cloudinary.com/dhtjil4zt/image/upload/v1775055976/6_vek6t4.jpg",
+      },
+      {
+        name: "Classic Vanilla Sheet Cake",
+        url: "https://res.cloudinary.com/dhtjil4zt/image/upload/q_auto/f_auto/v1775055274/1_ae2mhj.jpg",
+      },
+      {
+        name: "Rich Chocolate Cake",
+        url: "https://res.cloudinary.com/dhtjil4zt/image/upload/v1775055336/3_oc7kwn.jpg",
+      },
+      {
+        name: "Customised Blueberry Cake",
+        url: "https://res.cloudinary.com/dhtjil4zt/image/upload/q_auto/f_auto/v1775055330/2_xuxrpf.jpg",
+      },
+      {
+        name: "Matilda Chocolate Fudge Cake",
+        url: "ADD_YOUR_OWN_MATILDA_CAKE_IMAGE_URL",
+        imageSearch:
+          "https://www.google.com/search?tbm=isch&q=Matilda+chocolate+fudge+cake",
+      },
+      {
+        name: "London-Style Viral Chocolate Cake",
+        url: "ADD_YOUR_OWN_VIRAL_CHOCOLATE_CAKE_IMAGE_URL",
+        imageSearch:
+          "https://www.google.com/search?tbm=isch&q=London+viral+chocolate+cake",
+      },
+    ],
   },
+
   {
-    name: "Chocolate Chip Cookie",
-    url: "https://cdn.jsdelivr.net/gh/lavanya200276/buttered-elephant-images@main/1.jpeg",
+    category: "Brownies, Blondies & Cookies",
+    products: [
+      {
+        name: "Classic Chocolate Brownie Slab",
+        url: "https://res.cloudinary.com/dhtjil4zt/image/upload/v1775059128/3_sw8u2t.jpg",
+      },
+      {
+        name: "Nutella-Filled Brownies",
+        url: "https://res.cloudinary.com/dhtjil4zt/image/upload/v1775059128/2_v2lxv9.jpg",
+      },
+      {
+        name: "Chocolate Brownie Slab",
+        url: "https://res.cloudinary.com/dhtjil4zt/image/upload/v1775059128/4_h2isuf.jpg",
+      },
+      {
+        name: "Customised Brownie Birthday Slab",
+        url: "https://cdn.jsdelivr.net/gh/lavanya200276/buttered-elephant-images@main/19.jpeg",
+      },
+      {
+        name: "Duo Chocolate Brownies",
+        url: "https://res.cloudinary.com/dhtjil4zt/image/upload/v1775056440/9_fewo58.png",
+      },
+      {
+        name: "Mini Brownie Box",
+        url: "https://cdn.jsdelivr.net/gh/lavanya200276/buttered-elephant-images@main/9.jpeg",
+      },
+      {
+        name: "Fudgy Chocolate Blondies",
+        url: "https://res.cloudinary.com/dhtjil4zt/image/upload/v1775056296/Screenshot_2026-04-01_at_8.41.10_PM_lcgtog.png",
+      },
+      {
+        name: "Chocolate Chip Cookie",
+        url: "https://cdn.jsdelivr.net/gh/lavanya200276/buttered-elephant-images@main/1.jpeg",
+      },
+      {
+        name: "Chocolate Chip Cookie Tin",
+        url: "https://res.cloudinary.com/dhtjil4zt/image/upload/v1775060140/1_bwrgmq.jpg",
+      },
+    ],
   },
+
   {
-    name: "Classic Chocolate Brownie Slab",
-    url: "https://res.cloudinary.com/dhtjil4zt/image/upload/v1775059128/3_sw8u2t.jpg",
+    category: "Cheesecakes, Cupcakes & Classic Bakes",
+    products: [
+      {
+        name: "Customised Cheesecake",
+        url: "https://cdn.jsdelivr.net/gh/lavanya200276/buttered-elephant-images@main/20.jpeg",
+      },
+      {
+        name: "San Sebastian Cheesecake",
+        url: "https://res.cloudinary.com/dhtjil4zt/image/upload/v1775060154/4_ugdy2a.jpg",
+      },
+      {
+        name: "Vanilla Cupcakes",
+        url: "https://cdn.jsdelivr.net/gh/lavanya200276/buttered-elephant-images@main/2.jpeg",
+      },
+      {
+        name: "Chocolate & Vanilla Frosted Cupcakes",
+        url: "https://cdn.jsdelivr.net/gh/lavanya200276/buttered-elephant-images@main/17.jpeg",
+      },
+      {
+        name: "Classic Vanilla Sponge Cake",
+        url: "https://res.cloudinary.com/dhtjil4zt/image/upload/v1775059021/Gemini_Generated_Image_og0vxbog0vxbog0v_gplyd0.png",
+      },
+    ],
   },
+
   {
-    name: "Chocolate Chip Cookie Tin",
-    url: "https://res.cloudinary.com/dhtjil4zt/image/upload/v1775060140/1_bwrgmq.jpg",
-  },
-  {
-    name: "Fresh Pineapple Cake",
-    url: "https://cdn.jsdelivr.net/gh/lavanya200276/buttered-elephant-images@main/7.jpeg",
-  },
-  {
-    name: "Mini Brownie Box",
-    url: "https://cdn.jsdelivr.net/gh/lavanya200276/buttered-elephant-images@main/9.jpeg",
-  },
-  {
-    name: "Bestseller Blueberry Cake",
-    url: "https://cdn.jsdelivr.net/gh/lavanya200276/buttered-elephant-images@main/11.jpeg",
-  },
-  {
-    name: "Butterscotch Delight Cake",
-    url: "https://cdn.jsdelivr.net/gh/lavanya200276/buttered-elephant-images@main/12.jpeg",
-  },
-  {
-    name: "Red Velvet Cake",
-    url: "https://cdn.jsdelivr.net/gh/lavanya200276/buttered-elephant-images@main/15.jpeg",
-  },
-  {
-    name: "Custom Doraemon Cake",
-    url: "https://cdn.jsdelivr.net/gh/lavanya200276/buttered-elephant-images@main/16.jpeg",
-  },
-  {
-    name: "Bento Celebration Cake",
-    url: "https://cdn.jsdelivr.net/gh/lavanya200276/buttered-elephant-images@main/18.jpeg",
-  },
-  {
-    name: "Customised Brownie Birthday Slab",
-    url: "https://cdn.jsdelivr.net/gh/lavanya200276/buttered-elephant-images@main/19.jpeg",
-  },
-  {
-    name: "Customised Cheesecake",
-    url: "https://cdn.jsdelivr.net/gh/lavanya200276/buttered-elephant-images@main/20.jpeg",
-  },
-  {
-    name: "Tiered Milk Chocolate Sheet Cake",
-    url: "https://cdn.jsdelivr.net/gh/lavanya200276/buttered-elephant-images@main/6.jpeg",
-  },
-  {
-    name: "Chocolate Piñata Cake",
-    url: "https://cdn.jsdelivr.net/gh/lavanya200276/buttered-elephant-images@main/3.jpeg",
-  },
-  {
-    name: "Black Forest Cake",
-    url: "https://cdn.jsdelivr.net/gh/lavanya200276/buttered-elephant-images@main/4.jpeg",
-  },
-  {
-    name: "Classic Vanilla Sheet Cake",
-    url: "https://res.cloudinary.com/dhtjil4zt/image/upload/q_auto/f_auto/v1775055274/1_ae2mhj.jpg",
-  },
-  {
-    name: "Blueberry Celebration Cake",
-    url: "https://cdn.jsdelivr.net/gh/lavanya200276/buttered-elephant-images@main/5.jpeg",
-  },
-  {
-    name: "Classic Chocolate Brownie Slab",
-    url: "https://res.cloudinary.com/dhtjil4zt/image/upload/v1775059128/6_ve3mpj.jpg",
-  },
-  {
-    name: "Rich Chocolate Cake",
-    url: "https://res.cloudinary.com/dhtjil4zt/image/upload/v1775055336/3_oc7kwn.jpg",
-  },
-  {
-    name: "Vanilla Cupcakes",
-    url: "https://cdn.jsdelivr.net/gh/lavanya200276/buttered-elephant-images@main/2.jpeg",
-  },
-  {
-    name: "Fudgy Chocolate Blondies",
-    url: "https://res.cloudinary.com/dhtjil4zt/image/upload/v1775056296/Screenshot_2026-04-01_at_8.41.10_PM_lcgtog.png",
-  },
-  {
-    name: "Chocolate & Vanilla Frosted Cupcakes",
-    url: "https://cdn.jsdelivr.net/gh/lavanya200276/buttered-elephant-images@main/17.jpeg",
-  },
-  {
-    name: "Blueberry Cake",
-    url: "https://res.cloudinary.com/dhtjil4zt/image/upload/q_auto/f_auto/v1775055330/2_xuxrpf.jpg",
-  },
-  {
-    name: "Classic Vanilla Cake",
-    url: "https://res.cloudinary.com/dhtjil4zt/image/upload/v1775056200/Screenshot_2026-04-01_at_8.39.03_PM_uws1vv.png",
-  },
-  {
-    name: "Classic Blueberry Cake",
-    url: "https://res.cloudinary.com/dhtjil4zt/image/upload/v1775056926/5_i5go4j.png",
-  },
-  {
-    name: "Nutella-Filled Brownies",
-    url: "https://res.cloudinary.com/dhtjil4zt/image/upload/v1775059128/2_v2lxv9.jpg",
-  },
-  {
-    name: "Classic Chocolate Brownie Slab",
-    url: "https://res.cloudinary.com/dhtjil4zt/image/upload/v1775059128/4_h2isuf.jpg",
-  },
-  {
-    name: "Red Velvet Celebration Cake",
-    url: "https://res.cloudinary.com/dhtjil4zt/image/upload/v1775056833/copy_of_8_r9e1wh_fe1e87.png",
-  },
-  {
-    name: "San Sebastian Cheesecake",
-    url: "https://res.cloudinary.com/dhtjil4zt/image/upload/v1775060154/4_ugdy2a.jpg",
-  },
-  {
-    name: "Classic Vanilla Sponge Cake",
-    url: "https://res.cloudinary.com/dhtjil4zt/image/upload/v1775059021/Gemini_Generated_Image_og0vxbog0vxbog0v_gplyd0.png",
-  },
-  {
-    name: "Duo Chocolate Brownies",
-    url: "https://res.cloudinary.com/dhtjil4zt/image/upload/v1775056440/9_fewo58.png",
-  },
-  {
-    name: "Blueberry Delight Cake",
-    url: "https://res.cloudinary.com/dhtjil4zt/image/upload/v1775056190/Screenshot_2026-04-01_at_8.39.27_PM_vsyghj.png",
+    category: "Loaves & Tea Cakes",
+    products: [
+      {
+        name: "Banana Chocolate Loaf",
+        url: "ADD_YOUR_OWN_BANANA_CHOCOLATE_LOAF_IMAGE_URL",
+        imageSearch:
+          "https://www.google.com/search?tbm=isch&q=banana+chocolate+loaf+cake",
+      },
+      {
+        name: "Carrot Cake Loaf",
+        url: "ADD_YOUR_OWN_CARROT_LOAF_IMAGE_URL",
+        imageSearch:
+          "https://www.google.com/search?tbm=isch&q=carrot+cake+loaf",
+      },
+      {
+        name: "Lemon Blueberry Loaf",
+        url: "ADD_YOUR_OWN_LEMON_BLUEBERRY_LOAF_IMAGE_URL",
+        imageSearch:
+          "https://www.google.com/search?tbm=isch&q=lemon+blueberry+loaf+cake",
+      },
+    ],
   },
 ];
+
   return (
     <>
       <style>{`
